@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import facebook from './images/facebook.png';
+import google from './images/google.png';
+import background from './images/pizza.jpg';
+
 
 export const Register = (props) => {
     const [email, setEmail] = useState('');
@@ -10,19 +14,49 @@ export const Register = (props) => {
         console.log(email);
     }
 
-    return (
-        <div className="auth-form-container">
-            <h2>Register</h2>
-        <form className="register-form" onSubmit={handleSubmit}>
-            <label htmlFor="name">Full name</label>
-            <input value={name} name="name" onChange={(e) => setName(e.target.value)} id="name" placeholder="full Name" />
-            <label htmlFor="email">email</label>
-            <input value={email} onChange={(e) => setEmail(e.target.value)}type="email" placeholder="youremail@gmail.com" id="email" name="email" />
-            <label htmlFor="password">password</label>
-            <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
-            <button type="submit">Log In</button>
-        </form>
-        <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have an account? Login here.</button>
-    </div>
-    )
+     return(
+        <div >
+        <img src={background} className='background'/>
+        <h1>SignUp to make<br />
+             your meal <br />
+             better</h1>
+        <div className="div1">
+            <p className="p1">Rate it</p>
+            <p className="p2">Welcome</p>
+            <form className="register-form" onSubmit={handleSubmit}>
+                <label className="l1">Name :</label> 
+                
+                <input value={name} onChange={(e) => setName(e.target.value)} type="text" className="in1" placeholder=" Name" required />
+                
+                <label className="l2">Email :</label>
+                
+                <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="in2" placeholder=" Email" required />
+                
+                <label className="l3">Password</label>
+                
+                <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" className="in3" placeholder=" Password" required />
+                
+                <div className="div2">
+                    <label className="a1">Do you have an account?</label>
+                    <a onClick={() => props.onFormSwitch('login')} className="a2">Login</a>
+                </div>
+                <button type="submit" className="in4"  > Register  </button>
+                <label className="l4">OR</label>
+                    <div className="div3">
+                        <input type="submit" onClick={() => props.onFormSwitch('login')} img={facebook} value="Login here " className="in5" />
+                        <input type="submit" value="Continue with google" className="in6" />
+                    </div>
+                <div>
+                <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have an account? Login here.</button>
+
+                </div>
+            </form>
+            
+            
+
+            
+            </div>
+        
+        </div>
+    );
 }
