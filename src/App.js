@@ -6,7 +6,7 @@ import { Register } from "./components/Register";
 import "./components/Form1.css"
 
 function App() {
-  const [currentForm, setCurrentForm] = useState('login');
+  const [currentForm, setCurrentForm] = useState('Register');
 
   const toggleForm = (formName) => {
     setCurrentForm(formName);
@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       {
-        currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm} />
+        currentForm === "Register" ? <Register onFormSwitch={toggleForm} /> : <Login onFormSwitch={toggleForm} />
       }
     </div>
   );
