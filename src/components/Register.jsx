@@ -47,7 +47,7 @@ export const Register = (props) => {
                         <input type="submit" value="Continue with google" className="in6" />
                     </div>
                 <div>
-                <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have an account? Login here.</button>
+                <button className="link-btn" onClick={() => props.onFormSwitch('login')}> Login here.</button>
 
                 </div>
             </form>
